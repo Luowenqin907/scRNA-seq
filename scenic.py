@@ -65,8 +65,8 @@ if __name__ == '__main__':
 
     #Phase III: Cellular regulon enrichment matrix (aka AUCell)
     auc_mtx = aucell(ex_matrix, regulons, num_workers=4)
-    AUC_FNAME = os.path.join(DATA_FOLDER, "macrophage.csv")
-    AUC_FNAME1 = os.path.join(DATA_FOLDER, "macrophage1.csv")
+    AUC_FNAME = os.path.join(DATA_FOLDER, "auc.csv")
+    AUC_FNAME1 = os.path.join(DATA_FOLDER, "auc1.csv")
     auc_mtx.to_csv(AUC_FNAME)
     regulons = [r.rename(r.name.replace('(+)', ' (' + str(len(r)) + 'g)')) for r in regulons]
     auc_mtx = aucell(ex_matrix, regulons, num_workers=4)
